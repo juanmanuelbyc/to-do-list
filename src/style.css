@@ -1,10 +1,10 @@
 :root {
- --main-font: sans-serif;
+  --main-font: sans-serif;
 }
 
 * {
- margin: 0;
- padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -14,24 +14,24 @@ body {
 }
 
 .list-container {
- display: flex;
- margin-top: 150px;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+  display: flex;
+  margin-top: 150px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .mylist {
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 5px 2px rgba(0,0,0,.05);
+  box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.05);
   width: 50%;
   list-style: none;
   margin: 0;
 }
 
 .task-container {
-  width:inherit;
+  width: inherit;
   height: 50px;
   border-style: solid;
   border-width: 1px 0 0 0;
@@ -41,4 +41,3 @@ body {
   gap: 20px;
   padding: 0 10px;
 }
-
