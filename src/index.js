@@ -19,7 +19,7 @@ const tasks = [
   },
 ];
 
-document.querySelector('.mylist').innerHTML = tasks.map((task) =>`<li>
+document.querySelector('.mylist').innerHTML = tasks.map((task) => `<li>
     <div class="task-container">
     <input type="checkbox" id="checkbox${task.index}">  
     <h4>${task.description}</h4>

@@ -13,7 +13,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-     template: './src/index.html',
+      template: './src/index.html',
     }),
   ],
   output: {
@@ -27,44 +27,44 @@ module.exports = {
   module: {
     rules: [
       {
-         test: /\.css$/i,
-         use: ['style-loader', 'css-loader'],
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
       {
-         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-         type: 'asset/resource',
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
       {
-         test: /\.(csv|tsv)$/i,
-         use: ['csv-loader'],
+        test: /\.(csv|tsv)$/i,
+        use: ['csv-loader'],
       },
       {
-         test: /\.xml$/i,
-         use: ['xml-loader'],
+        test: /\.xml$/i,
+        use: ['xml-loader'],
       },
       {
-         test: /\.toml$/i,
-         type: 'json',
-         parser: {
-           parse: toml.parse,
+        test: /\.toml$/i,
+        type: 'json',
+        parser: {
+          parse: toml.parse,
          },
       },
       {
-         test: /\.yaml$/i,
-         type: 'json',
-         parser: {
-           parse: yaml.parse,
+        test: /\.yaml$/i,
+        type: 'json',
+        parser: {
+          parse: yaml.parse,
          },
       },
       {
-         test: /\.json5$/i,
-         type: 'json',
-         parser: {
-           parse: json5.parse,
+        test: /\.json5$/i,
+        type: 'json',
+        parser: {
+          parse: json5.parse,
          },
       },
     ],
