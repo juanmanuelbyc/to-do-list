@@ -11,7 +11,6 @@ body {
   background-color: white;
   font-family: var(--main-font);
   font-weight: 100;
-
 }
 
 .list-container {
@@ -89,11 +88,11 @@ body {
 }
 
 .icon-container:hover {
-  rsor: pointer;
+  cursor: pointer;
 }
 
 .clear-button-container {
-  dding: 0;
+  padding: 0;
 }
 
 .clear-button {
