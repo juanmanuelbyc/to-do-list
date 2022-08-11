@@ -21,12 +21,12 @@ export default class Tasks {
     this.getFromLocalStorage();
     container.innerHTML = '';
     this.tasks.forEach((task, i) => {
-      task.index = i;
+      task.index = i + 1;
       container.innerHTML += `<li>
       <div class="task-container list-row">
-      <input class="checker" type="checkbox" id="${i}">
-      <input class="task-description" type="text" name="task-title" id="${i}" value="${task.description}"/>
-      <div class="icon-container delete task-icon-container" id="${i}"></div>
+      <input class="checker" type="checkbox" id="${i + 1}">
+      <input class="task-description" type="text" name="task-title" id="${i + 1}" value="${task.description}${i + 1}"/>
+      <div class="icon-container delete task-icon-container" id="${i + 1}"></div>
       </div>
     </li>`;
     });
@@ -37,6 +37,7 @@ export default class Tasks {
         checkbox.nextSibling.nextSibling.classList.add('marked');
       }
       checkbox.addEventListener('change', () => {
+        
         if (checkbox.checked === true) {
           checkbox.nextSibling.nextSibling.classList.add('marked');
           temp.tasks[i].completed = true;
@@ -47,6 +48,7 @@ export default class Tasks {
         temp.setLocalStorage(temp.tasks);
       });
     });
+    
     descriptions = document.querySelectorAll('.task-description');
     temp = this;
     descriptions.forEach((desc, i) => {
@@ -62,8 +64,9 @@ export default class Tasks {
     const newTask = {
       description: newTaskDescription.value,
       completed: false,
-      index: this.tasks.length,
+      index: this.tasks.length + 1,
     };
+    
     this.tasks.push(newTask);
     this.clear();
     this.setLocalStorage(this.tasks);

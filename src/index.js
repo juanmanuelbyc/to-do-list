@@ -16,7 +16,7 @@ enter.addEventListener('click', task.createTask);
 container.addEventListener('click', (e) => {
   if (e.target.classList.contains('delete')) {
     const targetId = +e.target.getAttribute('id');
-    task.deleteTask(targetId);
+    task.deleteTask(targetId - 1);
   }
 });
 
@@ -24,7 +24,7 @@ clearBtn.addEventListener('click', () => {
   let x = 0;
   task.tasks.forEach((t) => {
     if (t.completed) {
-      task.deleteTask(t.index - x);
+      task.deleteTask(t.index - 1 - x);
       x += 1;
     }
   });
