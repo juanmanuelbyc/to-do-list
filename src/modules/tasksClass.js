@@ -17,10 +17,11 @@ export default class Tasks {
   };
 
   updateTasks = () => {
+    let temp = this;
     this.getFromLocalStorage();
     container.innerHTML = '';
     this.tasks.forEach((task, i) => {
-      task.index=i;
+      task.index = i;
       container.innerHTML += `<li>
       <div class="task-container list-row">
       <input class="checker" type="checkbox" id="${i}">
@@ -29,32 +30,32 @@ export default class Tasks {
       </div>
     </li>`;
     });
-    checkboxes = document.querySelectorAll("input[type=checkbox]");
-    var temp = this;
-    checkboxes.forEach(function(checkbox,i) {
-      if (temp.tasks[i].completed == true) {
+    checkboxes = document.querySelectorAll('input[type=checkbox]');
+    
+    checkboxes.forEach( (checkbox, i) => {
+      if (temp.tasks[i].completed === true) {
         checkbox.checked = true;
-        checkbox.nextSibling.nextSibling.classList.add("marked");
+        checkbox.nextSibling.nextSibling.classList.add('marked');
       }
-      checkbox.addEventListener('change', function() {
-       if (checkbox.checked == true) {
-        checkbox.nextSibling.nextSibling.classList.add("marked");
-        temp.tasks[i].completed = true;
-       }
-       else {
-        checkbox.nextSibling.nextSibling.classList.remove("marked");
-        temp.tasks[i].completed = false;
-       }
-       temp.setLocalStorage(temp.tasks);
-      })
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked === true) {
+          checkbox.nextSibling.nextSibling.classList.add('marked');
+          temp.tasks[i].completed = true;
+        }
+        else {
+          checkbox.nextSibling.nextSibling.classList.remove('marked');
+          temp.tasks[i].completed = false;
+        }
+        temp.setLocalStorage(temp.tasks);
+      });
     });
     descriptions = document.querySelectorAll('.task-description');
     temp = this;
-    descriptions.forEach(function(desc,i) {
-      desc.addEventListener('change', function() {
+    descriptions.forEach( (desc, i) => {
+      desc.addEventListener('change', () => {
         temp.tasks[i].description = desc.value;
         temp.setLocalStorage(temp.tasks);
-      })
+      });
     });
   };
 

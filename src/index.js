@@ -26,8 +26,8 @@ clearBtn.addEventListener('click', () => {
   let x = 0;
   task.tasks.forEach((t) => {
     if (t.completed) {
-      task.deleteTask(t.index-x);
-      x++;
+      task.deleteTask(t.index - x);
+      x += 1;
     }
   });
 });
