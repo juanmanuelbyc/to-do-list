@@ -31,8 +31,7 @@ export default class Tasks {
     </li>`;
     });
     checkboxes = document.querySelectorAll('input[type=checkbox]');
-    
-    checkboxes.forEach( (checkbox, i) => {
+    checkboxes.forEach((checkbox, i) => {
       if (temp.tasks[i].completed === true) {
         checkbox.checked = true;
         checkbox.nextSibling.nextSibling.classList.add('marked');
@@ -41,8 +40,7 @@ export default class Tasks {
         if (checkbox.checked === true) {
           checkbox.nextSibling.nextSibling.classList.add('marked');
           temp.tasks[i].completed = true;
-        }
-        else {
+        } else {
           checkbox.nextSibling.nextSibling.classList.remove('marked');
           temp.tasks[i].completed = false;
         }
@@ -51,7 +49,7 @@ export default class Tasks {
     });
     descriptions = document.querySelectorAll('.task-description');
     temp = this;
-    descriptions.forEach( (desc, i) => {
+    descriptions.forEach((desc, i) => {
       desc.addEventListener('change', () => {
         temp.tasks[i].description = desc.value;
         temp.setLocalStorage(temp.tasks);
