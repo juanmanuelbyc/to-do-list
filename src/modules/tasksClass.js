@@ -36,8 +36,8 @@ export default class Tasks {
         checkbox.checked = true;
         checkbox.nextSibling.nextSibling.classList.add('marked');
       }
+
       checkbox.addEventListener('change', () => {
-        
         if (checkbox.checked === true) {
           checkbox.nextSibling.nextSibling.classList.add('marked');
           temp.tasks[i].completed = true;
@@ -48,7 +48,6 @@ export default class Tasks {
         temp.setLocalStorage(temp.tasks);
       });
     });
-    
     descriptions = document.querySelectorAll('.task-description');
     temp = this;
     descriptions.forEach((desc, i) => {
@@ -66,7 +65,6 @@ export default class Tasks {
       completed: false,
       index: this.tasks.length + 1,
     };
-    
     this.tasks.push(newTask);
     this.clear();
     this.setLocalStorage(this.tasks);
