@@ -111,7 +111,8 @@ body {
   cursor: pointer;
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
 }
 
