@@ -24,10 +24,10 @@ export default class Tasks {
       task.index = i + 1;
       container.innerHTML += `<li>
       <div class="task-container list-row">
-      <input class="checker" type="checkbox" id="${i + 1}">
-      <p>${i + 1}</p>
-      <input class="task-description" type="text" name="task-title" id="${i + 1}" value="${task.description}"/>
-      <div class="icon-container delete task-icon-container" id="${i + 1}"></div>
+      <input class="checker" type="checkbox" id="${task.index}">
+      <p>${task.index}</p>
+      <input class="task-description" type="text" name="task-title" id="${task.index}" value="${task.description}"/>
+      <div class="icon-container delete task-icon-container" id="${task.index}"></div>
       </div>
     </li>`;
     });
@@ -36,6 +36,7 @@ export default class Tasks {
       if (temp.tasks[i].completed === true) {
         checkbox.checked = true;
         checkbox.nextSibling.nextSibling.classList.add('marked');
+        checkbox.nextSibling.nextSibling.nextSibling.nextSibling.classList.add('marked');
       }
 
       checkbox.addEventListener('change', () => {
