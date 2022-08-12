@@ -1,28 +1,31 @@
-// import _ from 'lodash';
 import './style.css';
+import Tasks from './modules/tasksClass.js';
 
-const tasks = [
-  {
-    description: 'cleaning',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'accounting',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'cooking',
-    completed: false,
-    index: 2,
-  },
-];
+const enter = document.querySelector('#enter-btn');
+const container = document.querySelector('.mylist');
+const clearBtn = document.querySelector('.clear-button');
 
-document.querySelector('.mylist').innerHTML = tasks.map((task) => `<li>
-    <div class="task-container list-row">
-    <input type="checkbox" id="checkbox${task.index}">  
-    <h4 class="task-description">${task.description}</h4>
-    <div class="icon-container task-icon-container"></div>
-    </div>
-  </li>`).join('');
+const task = new Tasks();
+
+document.addEventListener('DOMContentLoaded', () => {
+  task.updateTasks();
+});
+
+enter.addEventListener('click', task.createTask);
+
+container.addEventListener('click', (e) => {
+  if (e.target.classList.contains('delete')) {
+    const targetId = +e.target.getAttribute('id');
+    task.deleteTask(targetId - 1);
+  }
+});
+
+clearBtn.addEventListener('click', () => {
+  let x = 0;
+  task.tasks.forEach((t) => {
+    if (t.completed) {
+      task.deleteTask(t.index - 1 - x);
+      x += 1;
+    }
+  });
+});

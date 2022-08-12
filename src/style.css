@@ -49,6 +49,8 @@ body {
   border: none;
   font-size: medium;
   font-style: italic;
+  width: 80%;
+  overflow: hidden;
 }
 
 .enter-icon-container {
@@ -76,6 +78,9 @@ body {
 .task-description {
   width: 100%;
   text-align: left;
+  overflow: hidden;
+  font-size: medium;
+  border: none;
 }
 
 .task-icon-container {
@@ -104,4 +109,14 @@ body {
 
 .clear-button:hover {
   cursor: pointer;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.marked {
+  text-decoration-line: line-through;
+  color: grey;
 }
