@@ -90,5 +90,4 @@ export default class Tasks {
     this.setLocalStorage(notCompleted);
     this.updateTasks();
   }
-
 }
