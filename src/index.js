@@ -21,11 +21,5 @@ container.addEventListener('click', (e) => {
 });
 
 clearBtn.addEventListener('click', () => {
-  let x = 0;
-  task.tasks.forEach((t) => {
-    if (t.completed) {
-      task.deleteTask(t.index - 1 - x);
-      x += 1;
-    }
-  });
+  task.clearAllCompleted();
 });

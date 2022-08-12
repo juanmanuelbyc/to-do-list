@@ -84,4 +84,10 @@ export default class Tasks {
   clear = () => {
     newTaskDescription.value = '';
   };
+
+  clearAllCompleted = () => {
+    const notCompleted = this.tasks.filter((task) => task.completed !== true);
+    this.setLocalStorage(notCompleted);
+    this.updateTasks();
+  }
 }
