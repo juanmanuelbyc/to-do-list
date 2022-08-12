@@ -25,7 +25,7 @@ export default class Tasks {
       container.innerHTML += `<li>
       <div class="task-container list-row">
       <input class="checker" type="checkbox" id="${i + 1}">
-      <input class="task-description" type="text" name="task-title" id="${i + 1}" value="${task.description}${i + 1}"/>
+      <input class="task-description" type="text" name="task-title" id="${i + 1}" value="${i + 1} ${task.description}"/>
       <div class="icon-container delete task-icon-container" id="${i + 1}"></div>
       </div>
     </li>`;
@@ -56,6 +56,7 @@ export default class Tasks {
         temp.setLocalStorage(temp.tasks);
       });
     });
+    console.log(this.tasks);
   };
 
   createTask = (e) => {
@@ -83,6 +84,8 @@ export default class Tasks {
 
   clearAllCompleted = () => {
     const notCompleted = this.tasks.filter((task) => task.completed !== true);
+    this.setLocalStorage(notCompleted);
+    this.updateTasks();
   }
 
 }
