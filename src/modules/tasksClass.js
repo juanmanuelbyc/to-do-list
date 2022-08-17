@@ -5,7 +5,7 @@ let descriptions;
 
 export default class Tasks {
   tasks = [];
-  
+
   constructor() {
     this.getFromLocalStorage();
   }
@@ -17,16 +17,14 @@ export default class Tasks {
   };
 
   updateTasks = () => {
-    let temp;
     this.getFromLocalStorage();
-    temp = this.tasks;
+    const temp = this.tasks;
     container.innerHTML = '';
     this.tasks.forEach((task, i) => {
       task.index = i + 1;
       container.innerHTML += `<li>
       <div class="task-container list-row">
       <input class="checker" type="checkbox" id="${task.index}">
-      <p>${task.index}</p>
       <input class="task-description" type="text" name="task-title" id="${task.index}" value="${task.description}"/>
       <div class="icon-container delete task-icon-container" id="${task.index}"></div>
       </div>
@@ -39,16 +37,12 @@ export default class Tasks {
       if (temp[i].completed === true) {
         checkbox.checked = true;
         checkbox.nextSibling.nextSibling.classList.add('marked');
-        checkbox.nextSibling.nextSibling.nextSibling.nextSibling.classList.add('marked');
       }
-    
       checkbox.addEventListener('change', () => {
         if (checkbox.checked === true) {
           checkbox.nextSibling.nextSibling.classList.add('marked');
-          checkbox.nextSibling.nextSibling.nextSibling.nextSibling.classList.add('marked');
           temp[i].completed = true;
         } else {
-          checkbox.nextSibling.nextSibling.nextSibling.nextSibling.classList.remove('marked');
           checkbox.nextSibling.nextSibling.classList.remove('marked');
           temp[i].completed = false;
         }
