@@ -30,4 +30,10 @@ describe('test add and remove task element from DOM', () => {
     const list = document.querySelectorAll('.mylist li');
     expect(list).toHaveLength(1);
   });
+  
+  test ('delete task element from DOM', () => {
+    task.deleteTask(0);
+    const list = document.querySelectorAll('.mylist li');
+    expect(list).toHaveLength(0);
+   });   
 });
