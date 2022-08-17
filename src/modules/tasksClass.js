@@ -1,5 +1,3 @@
-const newTaskDescription = document.querySelector('#new-task-title');
-const container = document.querySelector('.mylist');
 let checkboxes;
 let descriptions;
 
@@ -19,10 +17,10 @@ export default class Tasks {
   updateTasks = () => {
     this.getFromLocalStorage();
     const temp = this.tasks;
-    container.innerHTML = '';
+    document.querySelector('.mylist').innerHTML = '';
     this.tasks.forEach((task, i) => {
       task.index = i + 1;
-      container.innerHTML += `<li>
+      document.querySelector('.mylist').innerHTML += `<li>
       <div class="task-container list-row">
       <input class="checker" type="checkbox" id="${task.index}">
       <input class="task-description" type="text" name="task-title" id="${task.index}" value="${task.description}"/>
@@ -62,7 +60,7 @@ export default class Tasks {
   createTask = (e) => {
     e.preventDefault();
     const newTask = {
-      description: newTaskDescription.value,
+      description: document.querySelector('#new-task-title').value,
       completed: false,
       index: this.tasks.length + 1,
     };
@@ -79,7 +77,7 @@ export default class Tasks {
   };
 
   clear = () => {
-    newTaskDescription.value = '';
+    document.querySelector('#new-task-title').value = '';
   };
 
   clearAllCompleted = () => {
