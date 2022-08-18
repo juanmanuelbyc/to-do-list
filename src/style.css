@@ -36,6 +36,10 @@ body {
   justify-content: space-between;
 }
 
+.yellow-bkg {
+  background-color: palegoldenrod;
+}
+
 .update-icon-container {
   width: 30px;
   height: 30px;
