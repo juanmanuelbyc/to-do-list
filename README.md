@@ -1,6 +1,8 @@
 # To Do List
 
-to Do List is a basic website that allows users to add/remove, update status(complete/uncomplete) and reorganize tasks from a list. witch is done by using webpack, webpack server.
+To Do List is a basic website that allows users to add/remove, update status(complete/uncomplete) and reorganize tasks from a list. This application is useful to have a control of your daily life by having a record of your pending tasks to be done.
+
+One of the main features of this project during its contruction was the use of webpack and webpack server.
 
 ## Built With
 
